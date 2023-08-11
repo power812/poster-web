@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useUserStore } from '../store/user'
 import axios from 'axios'
 import { message } from 'ant-design-vue'
-const prefix = process.env.NODE_ENV === 'development' ? '' : '/poster-web'
+const prefix = process.env.NODE_ENV === 'development' ? '/' : '/poster-web'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -33,7 +33,7 @@ const router = createRouter({
             meta: { requiredLogin: true, title: '编辑我的设计' },
         },
         {
-            path: `{prefix}/login`,
+            path: `${prefix}/login`,
             name: 'login',
             component: () => import(/* webpackChunkName: "login" */ '../views/Login/index.vue'),
             meta: { redirectAlreadyLogin: true, title: '登录到慕课乐高', disableLoading: true },
