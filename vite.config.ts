@@ -9,7 +9,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vitejs.dev/config/
 export default defineConfig((config) => {
-    const base = config.command === 'build' ? 'https://power-cli.oss-cn-shenzhen.aliyuncs.com/' : '/'
+    const base = config.command === 'build' ? 'https://power-cli.oss-cn-shenzhen.aliyuncs.com/poster-web/' : '/'
     if (config.command === 'build') {
         process.env.NODE_ENV = 'production'
     }
