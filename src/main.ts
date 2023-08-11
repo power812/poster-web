@@ -11,7 +11,6 @@ import Lego from 'lego-components'
 
 // 加载样式
 import 'lego-components/dist/lego-components.css'
-
 const app = createApp(App)
 const pinia = createPinia()
 app.use(pinia).use(Lego).use(router).use(configAnt).mount('#app')
@@ -21,8 +20,10 @@ import { message } from 'ant-design-vue'
 let baseBackendUrl
 if (process.env.NODE_ENV === 'development') {
     baseBackendUrl = 'http://127.0.0.1:5173/api/'
+    app.config.globalProperties.$prefix = '/'
 } else {
     baseBackendUrl = 'https://power17.xyz/api/'
+    app.config.globalProperties.$prefix = '/poster-web'
 }
 // const baseBackendUrl = 'http://182.92.168.192:8081/api/'
 axios.defaults.baseURL = baseBackendUrl
