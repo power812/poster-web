@@ -1,5 +1,5 @@
 <template>
-    <router-link to="/login" v-if="isEmptyObject(userStore.userInfo)">
+    <router-link :to="`${prefix}login`" v-if="isEmptyObject(userStore.userInfo)">
         <a-button type="primary" class="user-profile-component">登录</a-button>
     </router-link>
     <div v-else>
@@ -17,6 +17,8 @@
 import { useUserStore } from '../store/user'
 import { computed } from 'vue'
 import { isEmptyObject } from '../utils'
+import { getCurrentInstance } from 'vue'
+const prefix = getCurrentInstance()?.appContext.config.globalProperties.$prefix
 const userStore = useUserStore()
 const userInfo = computed(() => userStore.userInfo)
 console.log(userInfo)
