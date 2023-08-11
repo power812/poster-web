@@ -22,7 +22,7 @@ let baseBackendUrl
 if (process.env.NODE_ENV === 'development') {
     baseBackendUrl = 'http://127.0.0.1:5173/api/'
 } else {
-    baseBackendUrl = 'http://120.78.65.45:5173/api/'
+    baseBackendUrl = 'https://power17.xyz/api/'
 }
 // const baseBackendUrl = 'http://182.92.168.192:8081/api/'
 axios.defaults.baseURL = baseBackendUrl
