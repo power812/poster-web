@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'development') {
     app.config.globalProperties.$prefix = '/'
 } else {
     baseBackendUrl = 'https://power17.xyz/api/'
-    app.config.globalProperties.$prefix = '/poster-web'
+    app.config.globalProperties.$prefix = '/poster-web/'
 }
 // const baseBackendUrl = 'http://182.92.168.192:8081/api/'
 axios.defaults.baseURL = baseBackendUrl
